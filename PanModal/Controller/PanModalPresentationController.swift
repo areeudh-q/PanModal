@@ -825,7 +825,7 @@ private extension PanModalPresentationController {
 
             presentedView.frame.origin.y = max(position, anchoredVerticalPosition)
             if updateDragIndicatorView {
-                dragIndicatorView.frame.origin.y = presentedView.frame.origin.y - Constants.indicatorOffset
+                dragIndicatorView.frame.origin.y = presentedView.frame.origin.y - Constants.indicatorOffset - dragIndicatorView.frame.size.height
             }
 
             guard presentedView.frame.origin.y > shortFormPosition else {
@@ -843,7 +843,7 @@ private extension PanModalPresentationController {
         presentedView.frame.origin.x = max(position, anchoredHorizontalPosition)
 
         if updateDragIndicatorView {
-            dragIndicatorView.frame.origin.x = presentedView.frame.origin.x - Constants.indicatorOffset
+            dragIndicatorView.frame.origin.x = presentedView.frame.origin.x - Constants.indicatorOffset - dragIndicatorView.frame.size.height
         }
 
         guard presentedView.frame.origin.x > shortFormPosition else {
