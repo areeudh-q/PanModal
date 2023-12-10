@@ -207,6 +207,10 @@ open class PanModalPresentationController: UIPresentationController {
             return
         }
 
+        if self.panContainerView.frame == .zero {
+          self.adjustPresentedViewFrame()
+        }
+
         layoutBackgroundView(in: containerView)
         layoutPresentedView(in: containerView)
         adjustPresentedViewFrame()
