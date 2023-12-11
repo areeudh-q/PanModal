@@ -17,6 +17,17 @@ public extension PanModalPresentable where Self: UIViewController {
     typealias AnimationBlockType = () -> Void
     typealias AnimationCompletionType = (Bool) -> Void
 
+    func updatePopupHeight(to: CGFloat, state: PanModalPresentationController.PresentationState = .longForm) {
+        initializePresentable.height = to
+        panModalSetNeedsLayoutUpdate()
+        panModalTransition(to: state)
+    }
+
+    func updatePopupAllowDismiss(to: Bool) {
+        initializePresentable.dismiss = to
+        panModalSetNeedsLayoutUpdate()
+    }
+
     /**
      For Presentation, the object must be a UIViewController & confrom to the PanModalPresentable protocol.
      */
