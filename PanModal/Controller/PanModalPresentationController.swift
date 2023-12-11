@@ -345,6 +345,7 @@ public extension PanModalPresentationController {
         adjustPresentedViewFrame()
         observe(scrollView: presentable?.panScrollable)
         configureScrollViewInsets()
+        dragIndicatorView.isHidden = !(presentable?.showDragIndicator ?? false)
     }
 
 }
@@ -397,11 +398,9 @@ private extension PanModalPresentationController {
         if presentable.shouldRoundTopCorners {
             addRoundedCorners(to: presentedView)
         }
-
-        if presentable.showDragIndicator {
-            addDragIndicatorView(to: containerView, on: presentedView)
-        }
-
+     
+        addDragIndicatorView(to: containerView, on: presentedView)
+        
         setNeedsLayoutUpdate()
         adjustPanContainerBackgroundColor()
     }
@@ -490,6 +489,7 @@ private extension PanModalPresentationController {
      */
     func addDragIndicatorView(to view: UIView, on pinEdgeView: UIView) {
         dragIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        dragIndicatorView.isHidden = !(presentable?.showDragIndicator ?? false)
         view.addSubview(dragIndicatorView)
         if presentable?.orientation == .vertical {
             dragIndicatorView.bottomAnchor.constraint(equalTo: pinEdgeView.topAnchor, constant: -Constants.indicatorOffset).isActive = true
