@@ -76,7 +76,7 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var anchorModalToLongForm: Bool {
-        false
+        true
     }
 
     var allowsExtendedPanScrolling: Bool {
@@ -108,7 +108,7 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var showDragIndicator: Bool {
-        shouldRoundTopCorners
+        initializePresentable.dismiss
     }
 
     var shouldDismissWhenLongForm: Bool {
