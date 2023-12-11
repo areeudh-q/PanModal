@@ -12,7 +12,10 @@ import UIKit
  Default values for the PanModalPresentable.
  */
 public extension PanModalPresentable where Self: UIViewController {
-
+    var panScrollable: UIScrollView? { 
+        nil
+    }
+ 
     var orientation: PanModalOrientation {
         PanModalOrientation.vertical
     }
@@ -30,16 +33,17 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var longForm: PanModalHeight {
-        guard let scrollView = panScrollable else {
-              return .maxHeight
-        }
+        return .contentHeight(initializePresentable.height)
+        // guard let scrollView = panScrollable else {
+        //       return .maxHeight
+        // }
         // called once during presentation and stored
-        scrollView.layoutIfNeeded()
-        return .contentHeight(
-            self.orientation == .vertical
-                ? scrollView.contentSize.height
-                : scrollView.contentSize.width
-        )
+        // scrollView.layoutIfNeeded()
+        // return .contentHeight(
+        //     self.orientation == .vertical
+        //         ? scrollView.contentSize.height
+        //         : scrollView.contentSize.width
+        // )
     }
 
     var cornerRadius: CGFloat {
@@ -72,7 +76,7 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var anchorModalToLongForm: Bool {
-        true
+        false
     }
 
     var allowsExtendedPanScrolling: Bool {
