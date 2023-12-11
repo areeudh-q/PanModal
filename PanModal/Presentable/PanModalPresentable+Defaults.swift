@@ -18,7 +18,7 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var horizontalOffset: CGFloat {
-        leadingLayoutOffset + 16.0
+        0
     }
 
     var verticalOffset: CGFloat {
@@ -43,7 +43,7 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var cornerRadius: CGFloat {
-        8.0
+        17.0
     }
 
     var springDamping: CGFloat {
@@ -59,7 +59,7 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var panModalBackgroundColor: UIColor {
-        UIColor.black.withAlphaComponent(0.7)
+        UIColor.black.withAlphaComponent(0.6)
     }
 
     var dragIndicatorBackgroundColor: UIColor {
@@ -84,11 +84,11 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var allowsDragToDismiss: Bool {
-        true
+        initializePresentable.dismiss
     }
 
     var allowsTapToDismiss: Bool {
-        true
+        initializePresentable.dismiss
     }
 
     var isUserInteractionEnabled: Bool {
