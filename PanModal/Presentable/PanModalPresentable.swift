@@ -19,7 +19,18 @@ import UIKit
  }
  ```
  */
+
+public struct InitializePresentable {
+    public var height: CGFloat
+    public var dismiss: Bool
+    public init(height: CGFloat = 300, dismiss: Bool = true) {
+        self.height = height
+        self.dismiss = dismiss
+    }
+}
+
 public protocol PanModalPresentable: AnyObject {
+    var initializePresentable: InitializePresentable { get set }
 
     /**
      The orientation of the pan modal.
