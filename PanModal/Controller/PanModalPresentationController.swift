@@ -439,7 +439,7 @@ private extension PanModalPresentationController {
                 // (rotations & size changes cause positioning to be out of sync)
                 let yPosition = panContainerView.frame.origin.y - panContainerView.frame.height + containerViewFrame.height
                 presentedView.frame.origin.y = max(yPosition, anchoredVerticalPosition)
-                //                dragIndicatorView.frame.origin.y = presentedView.frame.origin.y - Constants.indicatorOffset
+                dragIndicatorView.frame.origin.y = presentedView.frame.origin.y - Constants.indicatorOffset
                 //              print("presentedView.frame.origin.y2 \(presentedView.frame.origin.y)")
             }
         } else {
