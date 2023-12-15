@@ -21,9 +21,9 @@ import UIKit
  */
 
 public struct InitializePresentable {
-    public var height: CGFloat
+    public var height: PanModalHeight
     public var dismiss: Bool
-    public init(height: CGFloat = 300, dismiss: Bool = true) {
+    public init(height: PanModalHeight = .contentHeight(300), dismiss: Bool = true) {
         self.height = height
         self.dismiss = dismiss
     }
