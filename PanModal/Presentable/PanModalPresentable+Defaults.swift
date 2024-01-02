@@ -65,7 +65,7 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var panModalBackgroundColor: UIColor {
-        UIColor.black.withAlphaComponent(0.4)
+        UIColor.black.withAlphaComponent(0.65)
     }
 
     var dragIndicatorBackgroundColor: UIColor {
