@@ -23,9 +23,11 @@ import UIKit
 public struct InitializePresentable {
     public var height: PanModalHeight?
     public var dismiss: Bool
-    public init(height: PanModalHeight? = nil, dismiss: Bool = true) {
+    public var transitionToLong: Bool
+    public init(height: PanModalHeight? = nil, dismiss: Bool = true, transitionToLong: Bool = true) {
         self.height = height
         self.dismiss = dismiss
+        self.transitionToLong = transitionToLong
     }
 }
 
