@@ -74,7 +74,10 @@ public class PanModalPresentationAnimator: NSObject {
         if presentable?.shouldUseAppearanceTransitions == true {
 
             // Presents the view in shortForm position, initially
-            let position: CGFloat = presentable?.shortFormPosition ?? 0.0
+            var position: CGFloat = presentable?.shortFormPosition ?? 0.0
+            if presentable?.initializePresentable.transitionToLong == true {
+                position = 0.0
+            }
 
             // Use panView as presentingView if it already exists within the containerView
             let panView: UIView = transitionContext.containerView.panContainerView ?? toVC.view
@@ -114,7 +117,10 @@ public class PanModalPresentationAnimator: NSObject {
         fromVC.beginAppearanceTransition(false, animated: true)
 
         // Presents the view in shortForm position, initially
-        let position: CGFloat = presentable?.shortFormPosition ?? 0.0
+        var position: CGFloat = presentable?.shortFormPosition ?? 0.0
+        if presentable?.initializePresentable.transitionToLong == true {
+            position = 0.0
+        }
 
         // Use panView as presentingView if it already exists within the containerView
         let panContainerView: UIView = transitionContext.containerView.panContainerView ?? toVC.view
