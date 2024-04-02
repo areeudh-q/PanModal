@@ -302,7 +302,7 @@ public extension PanModalPresentationController {
 
         switch state {
         case .shortForm:
-            snap(to: shortFormPosition)
+            snap(to: longFormPosition)
         case .longForm:
             snap(to: longFormPosition)
         }
@@ -513,7 +513,7 @@ private extension PanModalPresentationController {
             return
         }
 
-        shortFormPosition = layoutPresentable.shortFormPosition
+        shortFormPosition = layoutPresentable.longFormPosition
         longFormPosition = layoutPresentable.longFormPosition
         anchorModalToLongForm = layoutPresentable.anchorModalToLongForm
         extendsPanScrolling = layoutPresentable.allowsExtendedPanScrolling
